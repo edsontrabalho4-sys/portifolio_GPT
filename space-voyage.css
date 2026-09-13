@@ -1,0 +1,38 @@
+/* A cena tem uma apresentação estática real; nunca vira um espaço vazio. */
+.portfolio-shell{z-index:2}
+.voyage-canvas{position:fixed;inset:0;z-index:1;display:none;pointer-events:none}
+.space-enhanced:not(.background-only) .voyage-canvas.is-flying{display:block}
+.space-chapter{display:block;position:relative;height:100vh;height:100svh}
+.space-enhanced .space-chapter{height:360vh;height:360svh}
+.space-chapter__stage{position:sticky;top:0;height:100vh;height:100svh;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 74% 43%,#331021,#030305 70%);border-block:1px solid #38202a}
+.space-chapter__stage:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(transparent 56%,#24000899);opacity:var(--impact,0)}
+.scene-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;opacity:0}
+.space-scene-ready .scene-canvas{opacity:1}
+.space-poster{position:absolute;inset:0;pointer-events:none;z-index:1}
+.space-scene-ready .space-poster{visibility:hidden}
+.space-poster__earth{position:absolute;left:74%;top:43%;width:min(51vw,64svh,730px);height:auto;transform:translate(-50%,-50%);mix-blend-mode:screen}
+.space-poster__ship{position:absolute;left:20%;top:29%;width:min(20vw,280px);height:auto;transform:translate(-50%,-50%) rotate(12deg);filter:brightness(1.3) drop-shadow(-18px 1px 12px #b50f36)}
+.space-chapter__top,.space-chapter__bottom{position:absolute;left:max(28px,calc((100vw - 1120px)/2));right:max(28px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px;font:12px/1.6 var(--mono);letter-spacing:.1em;color:#c9bfc7;z-index:4}
+.space-chapter__top{top:100px}.space-chapter__top a{font-size:14px;letter-spacing:0;padding:8px 0;border-bottom:1px solid #b66075}
+.space-chapter__top a:hover{color:#ff8b9c}.space-chapter__bottom{bottom:32px}
+.space-chapter__caption{position:absolute;left:max(32px,calc((100vw - 1120px)/2));bottom:14%;z-index:4;max-width:500px;opacity:var(--caption,1);pointer-events:none}
+.space-chapter__caption h2{font-size:clamp(2.6rem,5.4vw,5rem);font-weight:900;line-height:.99;letter-spacing:-.055em;margin:16px 0}
+.space-chapter__caption .section-kicker{font:13px var(--mono);letter-spacing:.09em;color:#ff7c8c}
+.space-chapter__instruction{max-width:300px;font:14px/1.7 var(--mono);color:#d2c1cc}
+.space-resume{pointer-events:auto;margin-top:12px;padding:12px 18px;border:1px solid #ff4862;background:#2f0a16;color:#fff;font:700 14px var(--mono);cursor:pointer}
+.space-resume:hover{background:#591022}.space-error{color:#ffb6c1;font:14px/1.5 var(--mono);max-width:300px}
+.space-chapter__reveal{position:absolute;inset:0;z-index:3;display:grid;place-items:center;pointer-events:none;opacity:var(--reveal,0);transform:translateY(calc((1 - var(--reveal,0)) * 65px)) scale(calc(.75 + var(--reveal,0) * .25))}
+.space-chapter__reveal span{font-size:clamp(2.5rem,12vw,10.5rem);font-weight:900;line-height:1;letter-spacing:-.06em;color:#fff0f3;text-shadow:0 0 80px #ed224c77}
+.orbit-progress{width:140px;height:2px;background:#442231;overflow:hidden}.orbit-progress i{display:block;width:100%;height:100%;background:#ff5471;transform:scaleX(0);transform-origin:left}
+.space-enhanced .projects-section{position:relative;z-index:3;margin-top:-18svh;background:linear-gradient(#19030c,#05020400 280px),radial-gradient(ellipse at 75% 0%,#690d2433,transparent 65%)}
+@media(max-width:700px){
+ .space-enhanced .space-chapter{height:310svh}
+ .space-chapter__top,.space-chapter__bottom{left:22px;right:22px;gap:12px;font-size:11px}
+ .space-chapter__top{top:92px}.space-chapter__top a{font-size:12px}
+ .space-chapter__caption{left:26px;bottom:12%;max-width:85%}
+ .space-chapter__caption h2{font-size:clamp(2.3rem,11vw,3.6rem)}
+ .space-chapter__instruction{font-size:13px;max-width:270px}
+ .space-chapter__bottom{bottom:24px}.orbit-progress{width:70px}
+ .space-poster__earth{left:66%;width:58vw}.space-poster__ship{left:22%;top:17%;width:34vw;transform:translate(-50%,-50%) rotate(50deg)}
+}
+@media print{.space-chapter,.voyage-canvas{display:none!important}}
